@@ -1,4 +1,5 @@
 import PortfolioOverview from "@/app/components/Portfolio/PortfolioOverview";
+import { UserNotFound } from "@/app/components/Portfolio/UserNotFound";
 
 export default async function PortfolioPage({
   params,
@@ -12,7 +13,7 @@ export default async function PortfolioPage({
   );
 
   if (!response.ok) {
-    return <p>User not found. </p>;
+    return <UserNotFound />;
   }
   const userData = await response.json();
   return <PortfolioOverview userData={userData} />;

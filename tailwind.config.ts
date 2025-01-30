@@ -14,7 +14,16 @@ export default {
         primaryDark: "#7CD213", 
         primaryLight: "#D0E000"
       },
+      fontFamily : {
+        "hero-heading": ["Bebas Neue"],
+        "loader-text": ["Fascinate"],
+        "subtext-heebo": ["Heebo"],
+        "subtext-lora": ['Lora'],
+        "heading-playfair": ['Playfair Display'],
+        "heading-barlow": ["Barlow Semi Condensed"],
+        "subtext-mont": ["Montserrat"],
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 } satisfies Config;
