@@ -7,7 +7,8 @@ export default async function PortfolioPage({
 }) {
   const userName = params.username;
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/${userName}`
+    `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/${userName}`,
+    { next: { revalidate: 60 } }
   );
 
   if (!response.ok) {
