@@ -5,3 +5,7 @@ export type UserDataType = z.infer<typeof userSchema>;
 export type ProjectDataType = z.infer<typeof projectSchema>; 
 export type WorkExperienceType = z.infer<typeof workExperienceSchema>; 
 export type TestimonialType = z.infer<typeof testimonialSchema>; 
+const aboutMeProps = userSchema.pick({
+    aboutMe: true, 
+})
+export type AboutMePropsType = z.infer<typeof aboutMeProps>

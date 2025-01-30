@@ -12,7 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primaryDark: "#7CD213", 
-        primaryLight: "#D0E000"
+        primaryLight: "#D0E000", 
+        bgPeach: "#FAEFDD",
+        textBrown: "#292420",
+        textPeach: "#FCFAF6",
       },
       fontFamily : {
         "hero-heading": ["Bebas Neue"],

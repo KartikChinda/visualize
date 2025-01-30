@@ -39,7 +39,7 @@ export const userSchema = z.object({
     education: z.array(educationSchema).optional(),
     workExperience: z.array(workExperienceSchema).optional(),
     profilePicture: z.string(),
-    aboutMe: z.string(),
+    aboutMe: z.string().min(100).max(300),
     projects: z.array(projectSchema).optional(),
     skills: z.string(),
     testimonials: z.array(testimonialSchema).optional(),
