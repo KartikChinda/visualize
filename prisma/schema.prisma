@@ -21,10 +21,10 @@ model User {
   lastName       String?
   linkedin       String?
   github         String?
-  education      String?
+  education      Json?
   workExperience Json?
   profilePicture String
-  about_me       String
+  aboutMe        String
   projects       Json
   skills         String
   testimonials   Json?

@@ -6,7 +6,7 @@ import z from "zod";
 const prisma = new PrismaClient(); 
 
 export async function POST (req: NextRequest, {params} : {params: {username: string}}) {
-    const { username } = await params; 
+    const username = await params.username; 
     try {
         const userData = await req.json(); 
         userSchema.parse(userData);
@@ -24,8 +24,9 @@ export async function POST (req: NextRequest, {params} : {params: {username: str
                 {status: 400}
             )
         }
+       
         return NextResponse.json(
-            {error: "User creation failed."}, 
+            { error: "User creation failed.", details: error instanceof Error ? error.message : error },
             {status: 500},
         )
     }

@@ -8,8 +8,8 @@ export const testimonialSchema = z.object({
 
 export const educationSchema = z.object({
     university: z.string(),
-    startDate: z.date(), 
-    endDate: z.date(), 
+    startDate: z.string(), 
+    endDate: z.string(), 
     degree: z.string(), 
 });
 
@@ -23,8 +23,8 @@ export const projectSchema = z.object({
 
 export const workExperienceSchema = z.object({
     company: z.string(),
-    startDate: z.date(),
-    endDate: z.date().optional(),
+    startDate: z.string(),
+    endDate: z.string().optional(),
     role: z.string(),
     description: z.string(),
 })

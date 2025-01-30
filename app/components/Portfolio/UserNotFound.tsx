@@ -13,9 +13,9 @@ export const UserNotFound = () => {
       </p>
       <Link
         href="/"
-        className="bg-[#7CD213] text-gray-900 px-4 py-3 rounded-lg text-lg font-medium hover:bg-[#96eb2e] duration-300 font-subtext-mont"
+        className="bg-[#7CD213] text-gray-900 px-4 py-3 rounded-lg text-lg font-medium hover:bg-[#96eb2e] duration-300 font-subtext-mont uppercase"
       >
-        Go to Home
+        Get me started
       </Link>
     </div>
   );
