@@ -16,7 +16,7 @@ export const educationSchema = z.object({
 export const projectSchema = z.object({
     image: z.string(), 
     projectTitle: z.string().min(1), 
-    projectDescription: z.string().min(10).max(150), 
+    projectDescription: z.string().min(10).max(500), 
     githubLink: z.string().url(),
     websiteLink: z.string().url().optional(), 
 });
@@ -39,7 +39,7 @@ export const userSchema = z.object({
     education: z.array(educationSchema).optional(),
     workExperience: z.array(workExperienceSchema).optional(),
     profilePicture: z.string(),
-    aboutMe: z.string().min(100).max(300),
+    aboutMe: z.string().min(100).max(1000),
     projects: z.array(projectSchema).optional(),
     skills: z.string(),
     testimonials: z.array(testimonialSchema).optional(),

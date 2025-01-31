@@ -8,4 +8,10 @@ export type TestimonialType = z.infer<typeof testimonialSchema>;
 const aboutMeProps = userSchema.pick({
     aboutMe: true, 
 })
-export type AboutMePropsType = z.infer<typeof aboutMeProps>
+const contactMeProps = userSchema.pick({
+    email: true, 
+    linkedin: true, 
+    github: true, 
+})
+export type AboutMePropsType = z.infer<typeof aboutMeProps>; 
+export type contactMeProps = z.infer<typeof contactMeProps>; 

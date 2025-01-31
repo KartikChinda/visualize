@@ -12,9 +12,9 @@ export default async function PortfolioPage({
     { next: { revalidate: 60 } }
   );
 
-  //   if (!response.ok) {
-  //     return <UserNotFound />;
-  //   }
+  if (!response.ok) {
+    return <UserNotFound />;
+  }
   const userData = await response.json();
   return <PortfolioOverview userData={userData} />;
 }
