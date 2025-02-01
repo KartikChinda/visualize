@@ -25,7 +25,7 @@ const Hero = ({ heroData }: { heroData: heroDataProps }) => {
             href="#projects"
             className="bg-textPeach py-3 px-6 rounded-xl text-textBrown border-2 border-textBrown hover:text-textPeach hover:bg-textBrown duration-300"
           >
-            View My work
+            View My Work
           </a>
           <a
             href="#contact"

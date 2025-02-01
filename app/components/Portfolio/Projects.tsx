@@ -28,7 +28,7 @@ const Projects = ({ projects }: ProjectArrayProps) => {
                 <p className=" font-subtext-heebo font-extralight text-base italic">
                   Project 0{index + 1}
                 </p>
-                <p className=" font-subtext-heebo font-semibold text-2xl tracking-wide">
+                <p className=" font-subtext-mont font-semibold text-2xl ">
                   {project.projectTitle}
                 </p>
               </div>
@@ -44,8 +44,10 @@ const Projects = ({ projects }: ProjectArrayProps) => {
                 </div>
                 <div className="p-4 mt-4 w-[90%] font-subtext-mont lg:text-lg lg:w-[50%] flex flex-col">
                   <div>{project.projectDescription}</div>
-                  <div className="mt-4 font-light">{project.skills}</div>
-                  <div className="flex gap-2 text-3xl">
+                  <div className="mt-8 font-semilight italic font-subtext-heebo">
+                    {project.skills}
+                  </div>
+                  <div className="flex gap-2 text-3xl mt-8">
                     <Link
                       href={project.githubLink}
                       className="duration-500 bg-black rounded-full p-2 hover:invert"
