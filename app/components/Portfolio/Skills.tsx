@@ -4,7 +4,7 @@ const Skills = ({ skills }: { skills: string }) => {
   const skillsArray = skills.split(",");
   return (
     <>
-      <section className=" p-8">
+      <section className="my-10 p-8">
         <div className="mt-10 lg:mt-20 flex flex-col justify-center items-center w-full gap-2">
           <p className="text-6xl md:text-8xl mt-1 font-bold  text-textBrown font-heading-barlow uppercase">
             My Skills

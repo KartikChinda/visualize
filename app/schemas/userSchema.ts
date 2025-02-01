@@ -19,6 +19,7 @@ export const projectSchema = z.object({
     projectDescription: z.string().min(10).max(500), 
     githubLink: z.string().url(),
     websiteLink: z.string().url().optional(), 
+    skills: z.string(), 
 });
 
 export const workExperienceSchema = z.object({

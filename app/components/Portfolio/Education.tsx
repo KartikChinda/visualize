@@ -14,8 +14,8 @@ type educationArrayProps = {
 
 const Education = ({ education }: educationArrayProps) => {
   return (
-    <div className="p-8">
-      <div className="mt-4 mb-20 w-full p-4">
+    <div className="p-8 my-10">
+      <div className="mt-4 mb-14 w-full p-4">
         <p className="xl:p-8 text-6xl md:text-8xl mt-1 font-bold  text-textBrown font-heading-barlow uppercase">
           Education
         </p>

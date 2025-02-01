@@ -18,3 +18,4 @@ export type AboutMePropsType = z.infer<typeof aboutMeProps>;
 export type contactMeProps = z.infer<typeof contactMeProps>; 
 export type educationProps = z.infer<typeof educationSchema>; 
 export type workExperienceProps = z.infer<typeof workExperienceSchema>;
+export type projectsProps = z.infer<typeof projectSchema>; 
