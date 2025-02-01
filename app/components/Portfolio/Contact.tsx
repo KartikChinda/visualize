@@ -6,11 +6,11 @@ import Link from "next/link";
 export default function Contact({ email, github, linkedin }: contactMeProps) {
   return (
     <div className="py-20">
-      <div className="relative w-[90%] mx-auto bg-black text-textPeach py-16 flex flex-col items-center justify-center min-h-[60vh] rounded-lg">
-        <h1 className="text-7xl font-bold text-center font-heading-barlow uppercase">
+      <div className="relative w-[90%] mx-auto bg-black text-textPeach py-16 flex flex-col items-center justify-center min-h-[70vh] rounded-lg">
+        <h1 className="text-5xl md:text-8xl font-bold text-center font-heading-barlow uppercase">
           Got an idea?
         </h1>
-        <p className="text-xl text-center mt-4 font-subtext-mont">
+        <p className="text-base md:text-xl text-center mt-4 font-subtext-mont">
           I've got the skills. Let's team up.
         </p>
         <button
@@ -19,7 +19,7 @@ export default function Contact({ email, github, linkedin }: contactMeProps) {
         >
           Contact me
         </button>
-        <div className="flex gap-6 mt-12 bottom-4 absolute">
+        <div className="flex gap-6 mt-12 bottom-8 absolute">
           <Link
             href={github!}
             target="_blank"
