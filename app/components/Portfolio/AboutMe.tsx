@@ -3,7 +3,7 @@ import { AboutMePropsType } from "@/app/types";
 
 const AboutMe = ({ aboutMe }: AboutMePropsType) => {
   return (
-    <div className="pb-20 md:w-[90%]">
+    <div className="py-20 md:w-[90%]">
       <div className=" p-4 flex flex-col lg:flex-row justify-center items-stretch">
         <div className="px-8 mt-16 w-full lg:w-[45%] flex justify-center items-start lg:items-end flex-col pr-8 h-full">
           <p className="text-lg md:text-xl mt-5 font-extralight font-subtext-mont text-textBrown">

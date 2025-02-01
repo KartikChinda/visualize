@@ -7,10 +7,18 @@ import Contact from "./Contact";
 import Education from "./Education";
 import WorkEx from "./WorkEx";
 import Projects from "./Projects";
+import Hero from "./Hero";
 
 const PortfolioOverview = ({ userData }: { userData: UserDataType }) => {
+  const heroData = {
+    firstName: userData.firstName,
+    lastName: userData.lastName,
+    profilePicture: userData.profilePicture,
+  };
   return (
     <div className="bg-bgPeach">
+      <Hero heroData={heroData} />
+
       <AboutMe aboutMe={userData.aboutMe} />
       {userData.workExperience && <WorkEx workex={userData.workExperience} />}
       {userData.projects && <Projects projects={userData.projects} />}

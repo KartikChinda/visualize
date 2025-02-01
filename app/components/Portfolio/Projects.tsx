@@ -11,13 +11,13 @@ type ProjectArrayProps = {
 
 const Projects = ({ projects }: ProjectArrayProps) => {
   return (
-    <div className="bg-lightPeachbg p-8 my-10">
+    <section id="projects" className="bg-lightPeachbg p-8 my-10">
       <div className="flex flex-col justify-start items-start w-full gap-2">
-        <p className="text-2xl  mt-5 font-extralight font-subtext-heebo text-black ">
+        <p className="text-xl  mt-5 font-extralight font-subtext-mont text-black ">
           Gettin' my hands dirty
         </p>
-        <p className="text-5xl md:text-7xl  font-semibold tracking-wide text-black font-hero-heading">
-          Projects on display.
+        <p className="text-6xl lg:text-7xl xl:text-8xl mt-1 font-bold  text-textBrown font-heading-barlow uppercase">
+          My Projects.
         </p>
       </div>
       <div className="mt-20 flex flex-col gap-[100px] justify-center items-center">
@@ -39,7 +39,6 @@ const Projects = ({ projects }: ProjectArrayProps) => {
                     alt={project.projectTitle}
                     height={300}
                     width={300}
-                    style={{ cursor: "url('/eyes.png'), pointer" }}
                     className="my-2 rounded-xl hover:scale-105 lg:hover:scale-[1.30]  duration-300 border-2 border-black shadow-lg lg:scale-125"
                   />
                 </div>
@@ -68,7 +67,7 @@ const Projects = ({ projects }: ProjectArrayProps) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

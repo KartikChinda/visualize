@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Contact({ email, github, linkedin }: contactMeProps) {
   return (
-    <div className="py-20">
+    <section id="contact" className="py-20">
       <div className="relative w-[90%] mx-auto bg-black text-textPeach py-16 flex flex-col items-center justify-center min-h-[70vh] rounded-lg">
         <h1 className="text-5xl md:text-8xl font-bold text-center font-heading-barlow uppercase">
           Got an idea?
@@ -36,6 +36,6 @@ export default function Contact({ email, github, linkedin }: contactMeProps) {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
