@@ -32,7 +32,7 @@ export default function Home() {
           Get started <span className="group-hover:pl-4 duration-150">➟</span>
         </Link>
       </motion.button>
-      <div className="mt-10">
+      <div className="mt-10 flex justify-center items-center w-full 2xl:w-[70%]">
         <Features />
       </div>
     </div>

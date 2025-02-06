@@ -27,3 +27,7 @@ html {
   border-radius: 20px;
   border: transparent;
 }
+
+.bento-cell {
+  @apply flex justify-center items-center rounded-3xl font-subtext-mont text-black;
+}
