@@ -30,7 +30,7 @@ const Hero = () => {
         transition={{ duration: 0.4, delay: 0.5 }}
       >
         <Link
-          href="/"
+          href="/form"
           className="bg-primaryDark text-gray-900  px-4 py-3 rounded-lg text-lg font-medium hover:bg-primaryLight duration-300 font-subtext-mont uppercase group "
         >
           Get started <span className="group-hover:pl-4 duration-150">➟</span>
