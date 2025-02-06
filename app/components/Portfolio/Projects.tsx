@@ -28,7 +28,7 @@ const Projects = ({ projects }: ProjectArrayProps) => {
                 <p className=" font-subtext-heebo font-extralight text-base italic">
                   Project 0{index + 1}
                 </p>
-                <p className=" font-subtext-mont font-semibold text-2xl ">
+                <p className=" font-subtext-mont font-semibold text-2xl text-right">
                   {project.projectTitle}
                 </p>
               </div>

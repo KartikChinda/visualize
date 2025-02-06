@@ -16,10 +16,10 @@ const WorkEx = ({ workex }: workExperienceArrayProps) => {
   return (
     <div className="py-20 p-8">
       <div className="md:w-[95%] flex flex-col p-4 justify-end items-end xl:pr-8 mb-20">
-        <p className="text-lg md:text-xl  mt-5 mr-2 font-extralight font-subtext-mont text-textBrown ">
+        <p className="text-lg md:text-xl  mt-5 mr-2 font-extralight font-subtext-mont text-textBrown text-right">
           A glimpse into my professional journey
         </p>
-        <p className="text-6xl md:text-8xl mt-1 font-bold  text-right text-textBrown font-heading-barlow uppercase">
+        <p className="text-[54px] md:text-8xl mt-1 font-bold  text-right text-textBrown font-heading-barlow uppercase">
           Work Experience.
         </p>
       </div>
