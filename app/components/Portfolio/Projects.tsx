@@ -23,7 +23,7 @@ const Projects = ({ projects }: ProjectArrayProps) => {
       <div className="mt-20 flex flex-col gap-[100px] justify-center items-center">
         {projects.map((project, index) => {
           return (
-            <div key={index} className="w-full 3xl:w-[75%]">
+            <div key={index} className="w-full lg:w-[90%] 3xl:w-[75%] my-4">
               <div className="w-full flex justify-between items-center px-4">
                 <p className=" font-subtext-heebo font-extralight text-base italic">
                   Project 0{index + 1}

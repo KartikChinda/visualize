@@ -15,7 +15,7 @@ type workExperienceArrayProps = {
 const WorkEx = ({ workex }: workExperienceArrayProps) => {
   return (
     <div className="py-20 p-8">
-      <div className="md:w-[90%] flex flex-col p-4 justify-end items-end xl:pr-8 mb-20">
+      <div className="md:w-[95%] flex flex-col p-4 justify-end items-end xl:pr-8 mb-20">
         <p className="text-lg md:text-xl  mt-5 mr-2 font-extralight font-subtext-mont text-textBrown ">
           A glimpse into my professional journey
         </p>

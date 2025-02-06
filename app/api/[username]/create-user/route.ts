@@ -10,12 +10,23 @@ export async function POST (req: NextRequest, {params} : {params: {username: str
     try {
         const userData = await req.json(); 
         userSchema.parse(userData);
-        const newUser = await prisma.user.upsert({
-            where: {username: username}, 
-            update: userData, 
-            create: userData, 
+        // const newUser = await prisma.user.upsert({
+        //     where: {username: username}, 
+        //     update: userData, 
+        //     create: userData, 
+        // })
+        const existingUser = await prisma.user.findUnique({ where: { username } });
+        console.log(existingUser);
+        if(existingUser){
+            const updatedUser = await prisma.user.update({
+                where: { username },
+                data: userData
+            });
+            return NextResponse.json(updatedUser, {status: 200}); 
+        }
+        const newUser = await prisma.user.create({
+            data: userData, 
         })
-
         return NextResponse.json(newUser, {status: 200}); 
     } catch (error) {
         if(error instanceof z.ZodError) {
