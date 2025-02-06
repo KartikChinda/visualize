@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center items-center flex-col min-h-[95vh]">
+    <div className="flex justify-center items-center flex-col min-h-[98vh]">
       <motion.h1
         className=" text-xl md:text-2xl text-primaryDark font-heading-barlow text-center lg:-mb-14"
         initial={{ opacity: 0, y: -20 }}
@@ -16,7 +16,7 @@ const Hero = () => {
         That Speaks for Itself
       </motion.h1>
 
-      <div className=" tracking-wider font-hero-heading text-primaryLight text-[25vw] lg:text-[20vw]">
+      <div className=" tracking-wider  font-hero-heading text-primaryLight text-[25vw] lg:text-[21vw]">
         VISUALIZE
       </div>
       <p className="text-primaryDark text-lg text-center font-heading-barlow lg:-mt-20 tracking-wider mb-4">
