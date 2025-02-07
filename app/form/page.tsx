@@ -8,22 +8,47 @@ import EducationAndQuote from "../components/Form/EducationAndQuote";
 import ProgressBar from "../components/Form/ProgressBar";
 import { useFormStorage } from "../hooks/useFormStorage";
 import { SkipBack, SkipForward } from "@phosphor-icons/react";
+import {
+  aboutAndSkillsSchema,
+  basicsSchema,
+  educationAndQuoteSchema,
+  projectsAndTestimonialsSchema,
+  workExperienceFormSchema,
+} from "../schemas/formSchema";
 
 const steps = [
-  Basics,
-  AboutAndSkills,
-  WorkExperience,
-  ProjectsAndTestimonials,
-  EducationAndQuote,
+  { component: Basics, schema: basicsSchema },
+  { component: AboutAndSkills, schema: aboutAndSkillsSchema },
+  { component: WorkExperience, schema: workExperienceFormSchema },
+  { component: ProjectsAndTestimonials, schema: projectsAndTestimonialsSchema },
+  { component: EducationAndQuote, schema: educationAndQuoteSchema },
 ];
 
 const page = () => {
   const [step, setstep] = useState(0);
   const { formData, setFormData } = useFormStorage();
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const handleNextStep = () =>
     setstep((prev) => Math.min(prev + 1, steps.length - 1));
   const handlePrevStep = () => setstep((prev) => Math.max(prev - 1, 0));
-  const CurrentComponent = steps[step] || Basics;
+  const CurrentComponent = steps[step].component || Basics;
+
+  const handleValidateAndNext = () => {
+    const currSchema = steps[step].schema;
+    const result = currSchema.safeParse(formData);
+    console.log(result);
+    console.log(errors);
+    if (!result.success) {
+      const formattedErrors: { [key: string]: string } = {};
+      result.error.issues.forEach((issue) => {
+        formattedErrors[issue.path[0]] = issue.message;
+      });
+      setErrors(formattedErrors);
+      return;
+    }
+    setErrors({});
+    handleNextStep();
+  };
 
   return (
     <div className="bg-black text-primaryDark min-h-screen p-4 md:p-10 font-subtext-mont">
@@ -39,7 +64,7 @@ const page = () => {
         </p>
       </div>
       <ProgressBar step={step} totalSteps={steps.length} />
-      <div className="my-20 flex justify-between items-center">
+      <div className="md:mx-20 my-20 flex justify-between items-center">
         <button
           disabled={step === 0}
           className={`${step === 0 ? "text-gray-600" : ""}`}
@@ -58,8 +83,8 @@ const page = () => {
       <CurrentComponent
         formData={formData}
         setFormData={setFormData}
-        nextStep={handleNextStep}
-        prevStep={handlePrevStep}
+        handleValidateAndNext={handleValidateAndNext}
+        errors={errors}
       />
     </div>
   );
