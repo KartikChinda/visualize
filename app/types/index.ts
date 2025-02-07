@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { projectSchema, workExperienceSchema, testimonialSchema, userSchema, educationSchema } from "../schemas/userSchema";
+import { fullFormSchema } from "../schemas/formSchema";
 
 export type UserDataType = z.infer<typeof userSchema>; 
 export type ProjectDataType = z.infer<typeof projectSchema>; 
@@ -26,3 +27,4 @@ export type educationProps = z.infer<typeof educationSchema>;
 export type workExperienceProps = z.infer<typeof workExperienceSchema>;
 export type projectsProps = z.infer<typeof projectSchema>; 
 export type heroDataProps = z.infer<typeof heroDataSchema>; 
+export type fullFormProps = z.infer<typeof fullFormSchema>

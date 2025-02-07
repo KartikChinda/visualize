@@ -7,7 +7,7 @@ import ProjectsAndTestimonials from "../components/Form/ProjectsAndTestimonials"
 import EducationAndQuote from "../components/Form/EducationAndQuote";
 import ProgressBar from "../components/Form/ProgressBar";
 import { useFormStorage } from "../hooks/useFormStorage";
-import { div } from "framer-motion/client";
+import { SkipBack, SkipForward } from "@phosphor-icons/react";
 
 const steps = [
   Basics,
@@ -39,7 +39,28 @@ const page = () => {
         </p>
       </div>
       <ProgressBar step={step} totalSteps={steps.length} />
-      {/* <CurrentComponent formData={formData} setFormData={setFormData} nextStep={handleNextStep} prevStep={handlePrevStep} /> */}
+      <div className="my-20 flex justify-between items-center">
+        <button
+          disabled={step === 0}
+          className={`${step === 0 ? "text-gray-600" : ""}`}
+          onClick={handlePrevStep}
+        >
+          <SkipBack size={30} />
+        </button>
+        <button
+          disabled={step === steps.length - 1}
+          className={`${step === steps.length - 1 ? "text-gray-600" : ""}`}
+          onClick={handleNextStep}
+        >
+          <SkipForward size={30} />
+        </button>
+      </div>
+      <CurrentComponent
+        formData={formData}
+        setFormData={setFormData}
+        nextStep={handleNextStep}
+        prevStep={handlePrevStep}
+      />
     </div>
   );
 };
