@@ -1,27 +1,14 @@
 import React from "react";
-import { fullFormProps } from "@/app/types";
-import { z } from "zod";
 import CustomInput from "./CustomInput";
-
-type BasicsProps = {
-  formData: Partial<fullFormProps>;
-  setFormData: React.Dispatch<React.SetStateAction<Partial<fullFormProps>>>;
-  handleValidateAndNext: () => void;
-  errors: { [key: string]: string };
-};
+import { FormDataSectionProps } from "@/app/types";
+import { handleChange } from "@/app/utils";
 
 const Basics = ({
   formData,
   setFormData,
   handleValidateAndNext,
   errors,
-}: BasicsProps) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+}: FormDataSectionProps) => {
   return (
     <div className="p-4 text-primaryDark font-subtext-mont">
       <h2 className="text-4xl font-bold mb-2">Basics</h2>
@@ -34,7 +21,7 @@ const Basics = ({
           inputValue={formData.email}
           errors={errors}
           handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e);
+            handleChange(e, setFormData);
           }}
         />
         <CustomInput
@@ -44,7 +31,7 @@ const Basics = ({
           inputValue={formData.username}
           errors={errors}
           handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e);
+            handleChange(e, setFormData);
           }}
         />
         <CustomInput
@@ -54,7 +41,7 @@ const Basics = ({
           inputValue={formData.firstName}
           errors={errors}
           handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e);
+            handleChange(e, setFormData);
           }}
         />
         <CustomInput
@@ -64,7 +51,7 @@ const Basics = ({
           inputValue={formData.lastName}
           errors={errors}
           handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e);
+            handleChange(e, setFormData);
           }}
         />
         <CustomInput
@@ -74,7 +61,7 @@ const Basics = ({
           inputValue={formData.linkedin}
           errors={errors}
           handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e);
+            handleChange(e, setFormData);
           }}
         />
         <CustomInput
@@ -84,7 +71,7 @@ const Basics = ({
           inputValue={formData.github}
           errors={errors}
           handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e);
+            handleChange(e, setFormData);
           }}
         />
       </div>

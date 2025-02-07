@@ -28,3 +28,10 @@ export type workExperienceProps = z.infer<typeof workExperienceSchema>;
 export type projectsProps = z.infer<typeof projectSchema>; 
 export type heroDataProps = z.infer<typeof heroDataSchema>; 
 export type fullFormProps = z.infer<typeof fullFormSchema>
+
+export type FormDataSectionProps = {
+    formData: Partial<fullFormProps>;
+    setFormData: React.Dispatch<React.SetStateAction<Partial<fullFormProps>>>;
+    handleValidateAndNext: () => void;
+    errors: { [key: string]: string };
+};

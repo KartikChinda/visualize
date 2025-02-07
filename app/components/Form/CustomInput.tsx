@@ -7,6 +7,8 @@ type InputProps = {
   inputValue: string | undefined;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   errors: { [key: string]: string };
+  placeholder?: string;
+  accept?: string;
 };
 
 const CustomInput = ({
@@ -16,12 +18,16 @@ const CustomInput = ({
   inputValue,
   handleChange,
   errors,
+  placeholder,
+  accept,
 }: InputProps) => {
   return (
     <div className="my-4">
       <label className="block text-sm mb-1 font-bold ">{labelName}</label>
       <input
+        accept={accept}
         type={type}
+        placeholder={placeholder}
         name={name}
         value={inputValue || ""}
         onChange={handleChange}
