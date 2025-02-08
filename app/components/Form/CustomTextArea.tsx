@@ -5,7 +5,7 @@ type TextAreaInputProps = {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  errors?: string;
+  errors?: { [key: string]: string };
   placeholder?: string;
   rows?: number;
 };
@@ -29,10 +29,10 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
         placeholder={placeholder}
         rows={rows}
         className={`w-full border p-2 bg-black border-primaryLight rounded-xl ${
-          errors ? "border-red-500" : "border-primaryLight"
+          errors && errors[name] ? "border-red-500" : "border-primaryLight"
         }`}
       />
-      {errors && <p className="text-red-500 text-sm mt-1">{errors}</p>}
+      {errors && <p className="text-red-500 text-sm mt-1">{errors[name]}</p>}
     </div>
   );
 };

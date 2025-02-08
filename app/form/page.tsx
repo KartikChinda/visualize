@@ -46,6 +46,7 @@ const page = () => {
       setErrors(formattedErrors);
       return;
     }
+    console.log("Successfull", result);
     setErrors({});
     handleNextStep();
   };

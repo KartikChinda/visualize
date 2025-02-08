@@ -20,7 +20,7 @@ const AboutAndSkills = ({
           name="aboutMe"
           value={formData.aboutMe || ""}
           onChange={(e) => handleChange(e, setFormData)}
-          errors={errors.aboutMe}
+          errors={errors}
           placeholder="Enter a long paragraph here. Max 1000 characters."
         />
         <CustomInput

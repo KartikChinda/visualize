@@ -5,7 +5,10 @@ type InputProps = {
   type: string;
   name: string;
   inputValue: string | undefined;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index?: number
+  ) => void;
   errors: { [key: string]: string };
   placeholder?: string;
   accept?: string;
