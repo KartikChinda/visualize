@@ -36,8 +36,6 @@ const page = () => {
   const handleValidateAndNext = () => {
     const currSchema = steps[step].schema;
     const result = currSchema.safeParse(formData);
-    console.log(result);
-    console.log(errors);
     if (!result.success) {
       const formattedErrors: { [key: string]: string } = {};
       result.error.issues.forEach((issue) => {
@@ -46,7 +44,6 @@ const page = () => {
       setErrors(formattedErrors);
       return;
     }
-    console.log("Successfull", result);
     setErrors({});
     handleNextStep();
   };

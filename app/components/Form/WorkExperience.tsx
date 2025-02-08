@@ -38,7 +38,7 @@ const WorkExperience = ({
     <div className="p-4 text-primaryDark font-subtext-mont">
       <h2 className="text-4xl font-bold mb-2">Work Experience</h2>
       <h3>Tell us where you've worked. </h3>
-      <div className="mt-10 flex flex-col gap-4">
+      <div className="mt-10 flex flex-col gap-20">
         {workExperiences.map((exp, index) => (
           <div key={index}>
             <CustomInput
@@ -78,7 +78,7 @@ const WorkExperience = ({
             <CustomInput
               type="text"
               name="startDate"
-              placeholder="Format: MM-YY"
+              placeholder="Format: Month-YYYY"
               inputValue={exp.startDate}
               labelName="Starting Date"
               handleChange={(e) =>
@@ -95,7 +95,7 @@ const WorkExperience = ({
             <CustomInput
               type="text"
               name="endDate"
-              placeholder="Format: MM-YY (Enter present if you're still working.)"
+              placeholder="Format: Month-YYYY (Enter present if you're still working.)"
               inputValue={exp.endDate}
               labelName="Ending Date"
               handleChange={(e) =>
@@ -110,7 +110,6 @@ const WorkExperience = ({
               errors={errors}
             />
             <TextAreaInput
-              // type="description"
               name="description"
               placeholder="Enter what you did at your work."
               value={exp.description}
