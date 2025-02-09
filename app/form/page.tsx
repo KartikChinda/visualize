@@ -15,6 +15,7 @@ import {
   projectsAndTestimonialsSchema,
   workExperienceFormSchema,
 } from "../schemas/formSchema";
+import { ToastContainer } from "react-toastify";
 
 const steps = [
   { component: Basics, schema: basicsSchema },
@@ -50,6 +51,7 @@ const page = () => {
 
   return (
     <div className="bg-black text-primaryDark min-h-screen p-4 md:p-10 font-subtext-mont">
+      <ToastContainer />
       <div className="flex flex-col">
         <h1 className="font-heading-barlow text-4xl font-bold">
           Welcome, to Visualize.{" "}

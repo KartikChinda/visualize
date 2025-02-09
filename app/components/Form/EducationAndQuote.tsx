@@ -5,6 +5,8 @@ import { MinusCircle, PlusCircle } from "@phosphor-icons/react";
 import CustomInput from "./CustomInput";
 import TextAreaInput from "./CustomTextArea";
 import { handleArrayChange, handleChange } from "@/app/utils";
+import { fullFormSchema } from "@/app/schemas/formSchema";
+import { toast } from "react-toastify";
 
 const EducationAndQuote = ({
   formData,
@@ -30,6 +32,42 @@ const EducationAndQuote = ({
 
   const removeEducation = () => {
     setUniversities((prev) => prev.slice(0, -1));
+  };
+
+  const handleSubmitForm = async () => {
+    const result = fullFormSchema.safeParse(formData);
+    if (!result.success) {
+      console.log(result);
+      toast.error("Please fix errors before submitting.", {
+        theme: "colored",
+        position: "top-center",
+      });
+      return;
+    }
+    try {
+      const response = await fetch(
+        `/api/${formData.username?.toLowerCase()}/create-user`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Submission failed.");
+      }
+      toast.success("Form Submitted successfully.", {
+        theme: "colored",
+        position: "top-center",
+      });
+    } catch (error) {
+      toast.error("Submission failed. Please try again.", {
+        theme: "colored",
+        position: "top-center",
+      });
+      console.error("Submission error: ", error);
+    }
   };
 
   return (
@@ -68,7 +106,7 @@ const EducationAndQuote = ({
                   e,
                   setUniversities,
                   setFormData,
-                  "workExperience"
+                  "education"
                 )
               }
               errors={errors}
@@ -85,7 +123,7 @@ const EducationAndQuote = ({
                   e,
                   setUniversities,
                   setFormData,
-                  "workExperience"
+                  "education"
                 )
               }
               errors={errors}
@@ -102,7 +140,7 @@ const EducationAndQuote = ({
                   e,
                   setUniversities,
                   setFormData,
-                  "workExperience"
+                  "education"
                 )
               }
               errors={errors}
@@ -145,9 +183,9 @@ const EducationAndQuote = ({
       <div className="mt-10 flex justify-center items-center w-full">
         <button
           className="bg-[#7CD213] text-gray-900 px-10 py-3 rounded-lg text-lg font-medium hover:bg-[#96eb2e] duration-300 font-subtext-mont uppercase"
-          onClick={handleValidateAndNext}
+          onClick={handleSubmitForm}
         >
-          Next
+          Submit
         </button>
       </div>
     </div>
