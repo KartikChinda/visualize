@@ -1,13 +1,26 @@
 import { fullFormProps } from "../types";
 
 export const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement>,
     setFormData: React.Dispatch<React.SetStateAction<any>>
   ) => {
-    setFormData((prev: Partial<fullFormProps>) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    const file = e.target.files?.[0];
+    if(file) {
+        const reader = new FileReader(); 
+        reader.readAsDataURL(file); 
+        reader.onloadend = () => {
+            const base64String = reader.result; 
+            setFormData((prev: Partial<fullFormProps>) => ({
+                ...prev,
+                [e.target.name]: base64String, 
+              }));
+        }
+    } else{
+        setFormData((prev: Partial<fullFormProps>) => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+          }));
+    } 
   };
   
 export const handleArrayChange = (index: number, event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setState: React.Dispatch<React.SetStateAction<any>>, 
@@ -22,6 +35,5 @@ export const handleArrayChange = (index: number, event: React.ChangeEvent<HTMLIn
         }))
         return updatedArray;
     });
-
   };
   

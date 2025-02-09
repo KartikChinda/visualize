@@ -1,4 +1,3 @@
-import z  from "zod";
 import { userSchema } from "./userSchema";
 
 export const basicsSchema = userSchema.pick({
