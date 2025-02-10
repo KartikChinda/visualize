@@ -1,18 +1,19 @@
 import { fullFormProps } from "../types";
 
 export const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     setFormData: React.Dispatch<React.SetStateAction<any>>
   ) => {
-    const file = e.target.files?.[0];
+    
+    const file = e.target instanceof HTMLInputElement && e.target.type === "file" ? e.target.files?.[0] : false; 
+
     if(file) {
         const reader = new FileReader(); 
         reader.readAsDataURL(file); 
-        reader.onloadend = () => {
-            const base64String = reader.result; 
+        reader.onloadend = () => { 
             setFormData((prev: Partial<fullFormProps>) => ({
                 ...prev,
-                [e.target.name]: base64String, 
+                [e.target.name]: reader.result as string, 
               }));
         }
     } else{

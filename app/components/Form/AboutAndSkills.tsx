@@ -34,18 +34,19 @@ const AboutAndSkills = ({
             handleChange(e, setFormData);
           }}
         />
-        {/* need to do this */}
-        {/* <CustomInput
-          labelName="Profile Picture"
-          name="profilePicture"
-          type="file"
-          inputValue={formData.profilePicture}
-          errors={errors}
-          accept="image/*"
-          handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            handleChange(e, setFormData);
-          }}
-        /> */}
+        <div>
+          <CustomInput
+            labelName="Profile Picture"
+            name="profilePicture"
+            type="file"
+            errors={errors}
+            accept="image/*"
+            handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              handleChange(e, setFormData);
+            }}
+          />
+          {formData.profilePicture && <p>File Uploaded ✅</p>}
+        </div>
       </div>
 
       <div className="mt-10 flex justify-center items-center w-full">
